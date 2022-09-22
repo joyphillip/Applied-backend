@@ -1,18 +1,26 @@
-/* == External  modules == */
+/* == External Modules == */
+const express = require('express')
 
-/* == Internal  modules == */
+/* == Internal Modules == */
+const routes = require('./routes')
+
+/* == Express Instance == */
+const app = express()
 
 /* == cors == */
 
-/* PORT */
-
-/* == Express Instance == */
+/* == Port == */
+const PORT = process.env.PORT || 3000;
 
 /* == DB connection == */
 
-/* == middlewares == */
-// Setup Cors middleware
+/* == Middleware == */
 
 /* == Routes == */
+app.use('/jobs', routes.jobs)
+
+app.listen(PORT, () => {
+  console.log('🎧', 'Listening on port', PORT, '🎧',)
+})
 
 /* == Server Bind == */
