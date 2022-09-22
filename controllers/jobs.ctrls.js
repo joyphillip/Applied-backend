@@ -1,6 +1,9 @@
 const db = require ('../models')
 
 /* index */
+const index = (req, res) => {
+  res.send('GET route is working')
+}
 
 /* create */
 
@@ -8,10 +11,7 @@ const db = require ('../models')
 
 /* delete */
 
-// exports
+/* export */
 module.exports = {
     index,
-    create,
-    update,
-    destroy,
   }
