@@ -21,7 +21,10 @@ offer: {
     type: Boolean, 
     default: false
 }, 
-Notes: [{ type: String }] 
+notes: { 
+    type: String,
+    default: 'Add some notes!'
+}
     
 })
 
@@ -31,3 +34,4 @@ const Jobs = mongoose.model( 'Jobs',  jobsSchema)
 
 // export
 module.exports = Jobs
+
