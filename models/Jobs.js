@@ -26,7 +26,7 @@ Notes: [{ type: String }]
 })
 
 /* our schecma -> complied -> model -> is the one that have access to all the methods */
-
+const Jobs = mongoose.model( 'Jobs',  jobsSchema)
 
 
 // export
