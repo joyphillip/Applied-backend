@@ -24,9 +24,19 @@ const create = (req, res) => {
 /* update */
 
 /* delete */
+const destroy = (req, res) => {
+  db.Jobs.findByIdAndDelete(req.params.id, (error, deletedJob) => {
+    if(error) return res.status(400).json({ error: error.message });
+
+    return res.status(200).json({
+      message: `Job: ${deletedJob.job} deleted successfully`
+    });
+  });
+};
 
 /* export */
 module.exports = {
     index,
     create,
+    destroy,
   }

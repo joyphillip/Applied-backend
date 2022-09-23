@@ -5,6 +5,6 @@ const ctrls = require('../controllers')
 
 router.get('/', ctrls.jobs.index)
 router.post('/', ctrls.jobs.create)
-
+router.delete('/:id', ctrls.jobs.destroy)
 
 module.exports = router
