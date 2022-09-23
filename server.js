@@ -13,8 +13,11 @@ const app = express()
 const PORT = process.env.PORT || 3000;
 
 /* == DB connection == */
+require('./config/db.connection');
 
 /* == Middleware == */
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 /* == Routes == */
 app.use('/jobs', routes.jobs)
