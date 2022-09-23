@@ -22,6 +22,19 @@ const create = (req, res) => {
 };
 
 /* update */
+const update = (req, res) => {
+  db.Jobs.findByIdAndUpdate(
+    req.params.id, 
+    {
+      $set: req.body
+    }, 
+    { new: true }, 
+    (error, updatedJob) => {
+    if(error) return res.status(400).json({ error: error.message });
+
+    return res.status(200).json(updatedJob)
+  });
+};
 
 /* delete */
 const destroy = (req, res) => {
@@ -29,7 +42,7 @@ const destroy = (req, res) => {
     if(error) return res.status(400).json({ error: error.message });
 
     return res.status(200).json({
-      message: `Job: ${deletedJob.job} deleted successfully`
+      message: `Job: ${deletedJob.job} deleted successfully!`
     });
   });
 };
@@ -39,4 +52,5 @@ module.exports = {
     index,
     create,
     destroy,
+    update
   }
