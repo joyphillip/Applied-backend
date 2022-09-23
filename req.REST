@@ -1,0 +1,29 @@
+GET http://localhost:3000/jobs
+Content-Type: application/json
+
+
+###
+
+POST http://localhost:3000/jobs
+Content-Type: application/json
+
+{
+    "company": "This is the company name",
+    "date" : "September",
+    "job" : "Apple"
+}
+
+###
+PUT http://localhost:3000/jobs/632e206247f4c589e8c08e50
+Content-Type: application/json
+
+{
+    "company": "Updated company",
+    "date" : "Update",
+    "job" : "Update"
+}
+
+###
+
+DELETE http://localhost:3000/jobs/632e206247f4c589e8c08e50
+Content-Type: application/json
