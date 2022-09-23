@@ -21,8 +21,9 @@ offer: {
     type: Boolean, 
     default: false
 }, 
-Notes: { 
-    type: String 
+notes: { 
+    type: String,
+    default: 'Add some notes!'
 }
     
 })
