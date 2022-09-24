@@ -8,6 +8,9 @@ const routes = require('./routes')
 const app = express()
 
 /* == cors == */
+const cors = require('cors');
+app.use(cors());
+
 /* == Port == */
 const PORT = process.env.PORT || 3000;
 
