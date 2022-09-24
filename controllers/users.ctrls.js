@@ -41,7 +41,13 @@ const login = (req, res) => {
 }
 
 // DELETE USER
-
+const logout = (req, res) => {
+  req.session.destroy(() => {
+    req.status(200).json({
+      msg: 'users logged out'
+    })
+  })
+}
 
 
 // exports
