@@ -10,8 +10,28 @@ const app = express()
 /* == cors == */
 const cors = require('cors');
 app.use(cors());
-// const session = require('express-session');
 
+/* == session == */
+require('dotenv').config()
+const session = require('express-session');
+const SESSION_SECRET = process.env.SESSION_SECRET
+
+
+app.use(
+	session({
+		secret: SESSION_SECRET,
+		resave: false,
+		saveUninitialized: false,
+	})
+);
+
+const isAuthenticated = (req, res, next) => {
+	if (req.session.currentUser) {
+		return next();
+	} else {
+		res.status(403).json({ msg: 'login required' });
+	}
+};
 
 /* == Port == */
 const PORT = process.env.PORT || 3000;
