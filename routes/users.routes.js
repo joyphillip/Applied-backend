@@ -1,14 +1,10 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 
-/* == CTRLS == */
-const ctrls = require('../controllers');
+const ctrls = require('../controllers')
 
-/* http://localhost:3003/users */
+router.post('/signup', ctrls.users.signup)
+router.post('/login', ctrls.users)
+router.delete('/logout', ctrls.users.logout)
 
-router.post('/signup', ctrls.users.signup);
-router.post('/login', ctrls.users.login);
-router.delete('/logout', ctrls.users.logout);
-
-
-module.exports = router;
+module.exports = router

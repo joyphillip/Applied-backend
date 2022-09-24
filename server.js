@@ -8,7 +8,7 @@ const routes = require('./routes')
 const app = express()
 
 /* == cors == */
-
+const session = require('express-session')
 /* == Port == */
 const PORT = process.env.PORT || 3000;
 
@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 /* == Routes == */
 app.use('/jobs', routes.jobs)
+app.use('/users', routes.users)
 
 app.listen(PORT, () => {
   console.log('🎧', 'Listening on port', PORT, '🎧',)
