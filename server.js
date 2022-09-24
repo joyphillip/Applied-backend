@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000;
 
 /* == Routes == */
 app.use('/jobs', routes.jobs)
-app.user('/users', routes.users)
+app.use('/users', routes.users)
 
 app.listen(PORT, () => {
   console.log('🎧', 'Listening on port', PORT, '🎧',)
