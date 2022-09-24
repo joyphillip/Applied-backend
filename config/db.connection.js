@@ -1,5 +1,6 @@
+// require mongoose
 const mongoose = require('mongoose');
-
+/* == connection string == */
 const connectionStr = process.env.MONGODB_URI || 'mongodb+srv://jphillip018:Philmor4eva09!@joyscluster.fmwflap.mongodb.net/Applied?retryWrites=true&w=majority';
 
 // set up connection with the DB
