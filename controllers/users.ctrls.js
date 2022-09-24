@@ -17,7 +17,28 @@ const signup = (req, res) => {
 }
 
 // USER LOGIN ROUTE (CREATE SESSION)
-
+const login = (req, res) => {
+  db.Users.findOne({ username: req.body.username
+  }, (err, foundUser) => {
+    if(err){
+      res.send(err)
+    } else {
+      if (foundUser) {
+        if (bcrypt.compareSync(req.body.password, foundUser.password)){
+          req.session.currentUser = foundUser
+          console.log('user has been logged in')
+          res.status(200).json(foundUser)
+        } else {
+          res.status(404).json({
+            error: 'Incorrect Password'
+          })
+        }
+      } else{
+        res.status(400).json({ error: err})
+      }
+    }
+  })
+}
 
 // DELETE USER
 
