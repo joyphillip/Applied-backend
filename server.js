@@ -8,7 +8,6 @@ const routes = require('./routes')
 const app = express()
 
 /* == cors == */
-
 /* == Port == */
 const PORT = process.env.PORT || 3000;
 
