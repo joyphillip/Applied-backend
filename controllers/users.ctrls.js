@@ -1,6 +1,7 @@
 const db = require('../models')
 const bcrypt = require('bcrypt')
-// POST ROUTE sign up
+
+// / POST ROUTE sign up
 const signup = (req, res) => {
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
 
@@ -43,7 +44,7 @@ const login = (req, res) => {
 // DELETE USER
 const logout = (req, res) => {
   req.session.destroy(() => {
-    req.status(200).json({
+    res.status(200).json({
       msg: 'users logged out'
     })
   })

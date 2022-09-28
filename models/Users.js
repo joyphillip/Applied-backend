@@ -6,6 +6,7 @@ const passwordComplexity= require("joi-password-complexity")
 const usersSchema = new mongoose.Schema({
     username: { type: String, required: true },
     password: { type: String, required: true },
+    jobs: []
 })
 
 userSchema.methods.generateAuthToken= function(){
