@@ -55,5 +55,5 @@ app.listen(PORT, () => {
 
 //default
 app.get("/", (req, res) => {
-	res.send('/users.js')
+	res.send('./models/User.js')
 })
