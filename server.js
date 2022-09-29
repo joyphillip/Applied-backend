@@ -52,3 +52,8 @@ app.listen(PORT, () => {
 })
 
 /* == Server Bind == */
+
+//default
+app.get("/", (req, res) => {
+	res.send('/users.js')
+})
