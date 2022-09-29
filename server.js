@@ -11,7 +11,7 @@ const app = express()
 const cors = require('cors');
 app.use(cors());
 // whitelist & corsOptions
-const whitelist = ['http://localhost:3002', 'HEROKU FRONT END HERE']
+const whitelist = ['http://localhost:3002', 'https://applied-frontend-22.herokuapp.com/']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
