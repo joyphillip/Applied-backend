@@ -11,7 +11,7 @@ const app = express()
 const cors = require('cors');
 app.use(cors());
 // whitelist & corsOptions
-const whitelist = ['http://localhost:3002', process.env.REACT_APP_FRONTEND_URL]
+const whitelist = ['http://localhost:3002', `${process.env.REACT_APP_FRONTEND_URL}`]
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
