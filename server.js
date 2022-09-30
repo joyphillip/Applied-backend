@@ -50,7 +50,7 @@ const PORT = process.env.PORT || 3000;
 require('./config/db.connection');
 
 /* == Middleware == */
-app.use(cors(corsOptions))
+app.use(cors('*'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
