@@ -1,29 +1,33 @@
 const mongoose = require('mongoose')
-const jwt= require("jsonwebtoken")
-const Joi= require("joi")
-const passwordComplexity= require("joi-password-complexity")
+import validator from "validator"
+
 
 const usersSchema = new mongoose.Schema({
-    username: { type: String, required: true },
-    password: { type: String, required: true },
-    jobs: []
+    username: { 
+        type: String, 
+        required: [true, 'Please Provide Name']
+    },
+    email:{
+        type: String,
+        required: [true, "Please Provide Email"],
+        validate: {
+            validator: validator.isEmail,
+            message: "Please provide a valid email",
+        },
+        unique: true,
+    },
+    password: { 
+        type: String,
+        required: [true, "Please Provide Password"],
+        minlength: 6
+    },
+        
+    
 })
 
-userSchema.methods.generateAuthToken= function(){
-    const token=jwt.sign({_id:this_id._id}, process.env.JWTPRIVATEKEY,{expiresIn: "7d"});
-    return token
-}
+
 
 const Users = mongoose.model('Users', usersSchema);
 
-const validate = (data) => {
-    const schema = Joi.object({
-        username:Joi.string().required().label("Username"),
-        password: passwordComplexity().required().label("Password")
-    })
-    return schema.validate(data)
-}
-
-// exports
-module.exports = {Users, validate}; 
+module.exports = Users; 
 

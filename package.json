@@ -1,6 +1,9 @@
 {
   "name": "applied-backend",
   "version": "1.0.0",
+  "engines": {
+    "node": "18.2.0"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -27,6 +30,7 @@
     "joi": "^17.6.1",
     "joi-password-complexity": "^5.1.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.6.1"
+    "mongoose": "^6.6.1",
+    "validator": "^13.7.0"
   }
 }

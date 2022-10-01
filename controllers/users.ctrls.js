@@ -1,5 +1,6 @@
 const db = require('../models')
 const bcrypt = require('bcrypt')
+const session = require("express-session")
 
 // / POST ROUTE sign up
 const signup = (req, res) => {
@@ -16,6 +17,7 @@ const signup = (req, res) => {
     }
   })
 }
+
 
 // USER LOGIN ROUTE (CREATE SESSION)
 const login = (req, res) => {
