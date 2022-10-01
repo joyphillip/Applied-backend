@@ -10,7 +10,17 @@ const app = express()
 /* == cors == */
 const cors = require('cors');
 app.use(cors());
-
+// whitelist & corsOptions
+const whitelist = ['http://localhost:3002', `${process.env.FRONTEND_URL}`]
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
 /* == session == */
 require('dotenv').config()
 const session = require('express-session');
@@ -40,6 +50,7 @@ const PORT = process.env.PORT || 3000;
 require('./config/db.connection');
 
 /* == Middleware == */
+app.use(cors('*'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -52,3 +63,4 @@ app.listen(PORT, () => {
 })
 
 /* == Server Bind == */
+
