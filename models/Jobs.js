@@ -18,8 +18,7 @@ date: {
     required: true
 },
 offer: {
-    type: String, 
-    default: false
+    type: String,
 }, 
 notes: { 
     type: String,
