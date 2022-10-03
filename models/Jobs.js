@@ -19,6 +19,7 @@ date: {
 },
 offer: {
     type: String,
+    required: false
 }, 
 notes: { 
     type: String,
