@@ -10,7 +10,7 @@ job: {
     required: true
 },
 salary: {
-    type: Number, 
+    type: String, 
     default: 0
 }, 
 date: {
