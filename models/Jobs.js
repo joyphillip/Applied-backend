@@ -18,7 +18,7 @@ date: {
     required: true
 },
 offer: {
-    type: Boolean, 
+    type: String, 
     default: false
 }, 
 notes: { 
