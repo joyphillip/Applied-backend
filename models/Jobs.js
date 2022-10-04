@@ -23,7 +23,8 @@ offer: {
 }, 
 notes: { 
     type: String,
-    default: 'Add some notes!'
+    default: 'Add some notes!',
+    required: false
 }
     
 })
