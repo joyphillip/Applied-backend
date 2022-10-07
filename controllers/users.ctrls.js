@@ -49,6 +49,8 @@ const logout = (req, res) => {
     res.status(200).json({
       msg: 'users logged out'
     })
+    //test
+    res.redirect('/users/signin')
   })
 }
 
